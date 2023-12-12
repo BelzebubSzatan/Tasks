@@ -34,7 +34,8 @@ namespace Tasks {
             {
                 tasks.Remove(model);
                 JSONHandling.JsonHandling.WriteToFile(tasks);
-
+                tasks = JSONHandling.JsonHandling.GetFromFile();
+                TasksList.ItemsSource = tasks;
             }
 
         }
