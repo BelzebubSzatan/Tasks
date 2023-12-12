@@ -31,6 +31,12 @@ namespace Tasks {
         }
 
         private void Delete_Clicked(object sender, EventArgs e) {
+            if (TasksList.SelectedItem is TaskModel model)
+            {
+                tasks.Remove(model);
+                JSONHandling.JsonHandling.WriteToFile(tasks);
+
+            }
 
         }
     }
