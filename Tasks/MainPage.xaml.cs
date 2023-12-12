@@ -20,7 +20,7 @@ namespace Tasks {
                     Importance="Ważne",
                 }
             };
-            TasksList.ItemsSource = tasks;
+            TasksList.ItemsSource = JSONHandling.JsonHandling.GetFromFile();
         }
 
         private void Add_Clicked(object sender, EventArgs e) {
