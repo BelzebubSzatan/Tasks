@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Tasks.AddEditPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Tytul"
+                   x:Name="Title"/>
+            <Entry Placeholder="Opis"
+                   x:Name="Description"/>
+            <Picker x:Name="Importance">
+                <Picker.Items>
+                    <x:String>Ważne</x:String>
+                    <x:String>Bardzo Ważne</x:String>
+                    <x:String>Normalne</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Dodaj"
+                    x:Name="Add"
+                    Clicked="Add_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

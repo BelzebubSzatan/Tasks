@@ -22,9 +22,13 @@ namespace Tasks {
             };
             TasksList.ItemsSource = tasks;
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            TasksList.ItemsSource = tasks;
+        }
         private void Add_Clicked(object sender, EventArgs e) {
-
+            Navigation.PushAsync(new AddEditPage(tasks));
         }
 
         private void Edit_Clicked(object sender, EventArgs e) {
