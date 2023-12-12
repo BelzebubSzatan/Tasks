@@ -26,7 +26,8 @@ namespace Tasks {
         }
 
         private void Edit_Clicked(object sender, EventArgs e) {
-
+            if (TasksList.SelectedItem is TaskModel model)
+                Navigation.PushAsync(new AddEditPage(tasks, model));
         }
 
         private void Delete_Clicked(object sender, EventArgs e) {
