@@ -12,19 +12,13 @@ namespace Tasks {
         List<TaskModel> tasks = new List<TaskModel>();
         public MainPage() {
             InitializeComponent();
-            tasks = new List<TaskModel>() {
-                new TaskModel() {
-                    ID=new Guid(),
-                    Title="title",
-                    Description="description",
-                    Importance="Ważne",
-                }
-            };
-            TasksList.ItemsSource = JSONHandling.JsonHandling.GetFromFile();
+            tasks = JSONHandling.JsonHandling.GetFromFile();
+            TasksList.ItemsSource = tasks;
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            tasks = JSONHandling.JsonHandling.GetFromFile();
             TasksList.ItemsSource = tasks;
         }
         private void Add_Clicked(object sender, EventArgs e) {

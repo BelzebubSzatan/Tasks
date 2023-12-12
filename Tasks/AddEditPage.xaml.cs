@@ -19,7 +19,7 @@ namespace Tasks
             tasks = list;
         }
 
-        private void Add_Clicked(object sender, EventArgs e)
+        private async void Add_Clicked(object sender, EventArgs e)
         {
             TaskModel taskModel = new TaskModel();
             taskModel.ID = Guid.NewGuid();
@@ -27,7 +27,8 @@ namespace Tasks
             taskModel.Description = Description.Text;
             taskModel.Importance = Importance.SelectedItem.ToString();
             tasks.Add(taskModel);
-            Navigation.PopToRootAsync();
+            JSONHandling.JsonHandling.WriteToFile(tasks);
+            await Navigation.PopToRootAsync();
         }
     }
 }
